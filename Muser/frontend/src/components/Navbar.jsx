@@ -22,6 +22,7 @@ const Navbar = () => {
         {user ? (
           <>
             <Link to="/tasks" className={redButton}>Albums</Link>
+            <Link to="/search" className={redButton}>Search</Link>
             <Link to="/profile" className={redButton}>Profile</Link>
             <button
               onClick={handleLogout}
@@ -32,7 +33,7 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <Link to="/login" className={whiteButton}>Login</Link>
+            <Link to="/login" className={redButton}>Login</Link>
             <Link
               to="/register"
               className={whiteButton}

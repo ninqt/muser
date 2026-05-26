@@ -9,6 +9,16 @@ res.status(500).json({ message: error.message });
 }
 }; 
 
+//Read-Search
+const searchTasks = async (req, res) => {
+try {  
+const tasks = await Task.find({ title: req.query.title }).populate('userId','name');  
+res.json(tasks);  
+} catch (error) {  
+res.status(500).json({ message: error.message });
+}
+}; 
+
 //Add
 const addTask = async (req, res) => { 
 const { title, artist_name, description, rating } = req.body; 
@@ -51,4 +61,4 @@ res.json({ message: 'Review deleted' });
 res.status(500).json({ message: error.message }); 
 }
 }; 
-module.exports = { getTasks, addTask, updateTask, deleteTask };
+module.exports = { getTasks, addTask, updateTask, deleteTask, searchTasks };
