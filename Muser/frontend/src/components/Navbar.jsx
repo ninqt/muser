@@ -6,6 +6,7 @@ const redButton = "bg-[#9B0F0F] font-bold ring-2 ring-white ring-inset px-4 py-2
 const whiteButton = "bg-white text-[#9B0F0F] font-bold px-4 py-2 rounded hover:underline"
 const Navbar = () => {
   const { user, logout } = useAuth();
+  console.log(user);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -21,6 +22,9 @@ const Navbar = () => {
       <div>
         {user ? (
           <>
+            {user.admin &&(
+              <Link to="/tasks" className={redButton}>Admin</Link>
+            )}
             <Link to="/tasks" className={redButton}>Albums</Link>
             <Link to="/search" className={redButton}>Search</Link>
             <Link to="/profile" className={redButton}>Profile</Link>
