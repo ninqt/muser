@@ -23,7 +23,7 @@ const Navbar = () => {
         {user ? (
           <>
             {user.admin &&(
-              <Link to="/tasks" className={redButton}>Admin</Link>
+              <Link to="/admin" className={redButton}>Admin</Link>
             )}
             <Link to="/tasks" className={redButton}>Albums</Link>
             <Link to="/search" className={redButton}>Search</Link>
